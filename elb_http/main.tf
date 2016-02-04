@@ -3,11 +3,11 @@
 //
 
 // Provider specific configs
-provider "aws" {
-    access_key = "${var.aws_access_key}"
-    secret_key = "${var.aws_secret_key}"
-    region = "${var.aws_region}"
-}
+//provider "aws" {
+//    access_key = "${var.aws_access_key}"
+//    secret_key = "${var.aws_secret_key}"
+//    region = "${var.aws_region}"
+//}
 
 // ELB Resource for Module
 // A note about instances:
