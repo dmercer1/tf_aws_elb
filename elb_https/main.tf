@@ -3,11 +3,11 @@
 //
 
 // Provider specific configs
-provider "aws" {
-    access_key = "${var.aws_access_key}"
-    secret_key = "${var.aws_secret_key}"
-    region = "${var.aws_region}"
-}
+// provider "aws" {
+//    access_key = "${var.aws_access_key}"
+//    secret_key = "${var.aws_secret_key}"
+//    region = "${var.aws_region}"
+//}
 
 // ELB Resource for Module
 // A note about instances:
@@ -20,6 +20,13 @@ resource "aws_elb" "elb" {
   internal = "${var.elb_is_internal}"
   security_groups = ["${var.elb_security_group}"]
 
+  listener {
+    instance_port = "${var.backend_port}"
+    instance_protocol = "${var.backend_protocol}"
+    lb_port = 80
+    lb_protocol = "http"
+  }
+  
   listener {
     instance_port = "${var.backend_port}"
     instance_protocol = "${var.backend_protocol}"
