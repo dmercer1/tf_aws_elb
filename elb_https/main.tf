@@ -26,7 +26,7 @@ resource "aws_elb" "elb" {
     lb_port = 80
     lb_protocol = "http"
   }
-  
+
   listener {
     instance_port = "${var.backend_port}"
     instance_protocol = "${var.backend_protocol}"
