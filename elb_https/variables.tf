@@ -22,6 +22,7 @@ variable "ssl_certificate_id" {
 
 variable "subnets" {
   description = "The subnet for AZ1"
+  type = "string"
 }
 
 variable "backend_port" {
@@ -42,8 +43,3 @@ variable "health_check_target" {
   // This is primarily used with `http` or `https` backend protocols
   // The format is like `HTTPS:443/health`
 }
-
-// Variables for providers used in this module
-//variable "aws_access_key" {}
-//variable "aws_secret_key" {}
-//variable "aws_region" {}

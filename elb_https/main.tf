@@ -8,7 +8,7 @@
 //   the ELB.
 resource "aws_elb" "elb" {
   name = "${var.elb_name}"
-  subnets = "${var.subnets}"
+  subnets = ["${var.subnets}"]
   internal = "${var.elb_is_internal}"
   security_groups = ["${var.elb_security_group}"]
 
