@@ -1,14 +1,6 @@
 //
 // Module: tf_aws_elb/elb_https
 //
-
-// Provider specific configs
-// provider "aws" {
-//    access_key = "${var.aws_access_key}"
-//    secret_key = "${var.aws_secret_key}"
-//    region = "${var.aws_region}"
-//}
-
 // ELB Resource for Module
 // A note about instances:
 // - This module assumes your instances will be made
@@ -16,7 +8,7 @@
 //   the ELB.
 resource "aws_elb" "elb" {
   name = "${var.elb_name}"
-  subnets = ["${var.subnet_az1}","${var.subnet_az2}"]
+  subnets = "${element(split(",", var.subnets), count.index)}"
   internal = "${var.elb_is_internal}"
   security_groups = ["${var.elb_security_group}"]
 

@@ -20,12 +20,8 @@ variable "ssl_certificate_id" {
   description = "The ARN of the SSL Certificate in EC2"
 }
 
-variable "subnet_az1" {
+variable "subnets" {
   description = "The subnet for AZ1"
-}
-
-variable "subnet_az2" {
-  description = "The subnet for AZ2"
 }
 
 variable "backend_port" {
