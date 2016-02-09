@@ -1,14 +1,3 @@
-//
-// Module: tf_aws_elb/elb_http
-//
-
-// Provider specific configs
-//provider "aws" {
-//    access_key = "${var.aws_access_key}"
-//    secret_key = "${var.aws_secret_key}"
-//    region = "${var.aws_region}"
-//}
-
 // ELB Resource for Module
 // A note about instances:
 // - This module assumes your instances will be made
