@@ -41,3 +41,8 @@ variable "health_check_target" {
   // This is primarily used with `http` or `https` backend protocols
   // The format is like `HTTPS:443/health`
 }
+
+variable "idle_timeout" {
+  description = "The timeout interval"
+  default = 60
+}
