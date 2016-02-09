@@ -24,6 +24,6 @@ resource "aws_elb" "elb" {
     interval = 30
   }
 
-  idle_timeout = "$var.idle_timeout"
+  idle_timeout = "${var.idle_timeout}"
   cross_zone_load_balancing = true
 }
